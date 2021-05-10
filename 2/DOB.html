@@ -1,0 +1,52 @@
+<!-- Write a JS function and ask for user DOB ex: 10/June/1998 and if
+user age is between 18 to 44 then this link should be open
+automatically in browser “https://selfregistration.cowin.gov.in”.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function ageCalculator(){
+            var userinput= document.getElementById("DOB").value;
+            var dob=new Date(userinput);
+            if(userinput==null){
+                document.getElementById("Message").innerHTML="choose a date please";
+                return false;
+            }
+            else{
+                var month_diff = Date.now() - dob.getTime();  
+      
+    
+                var age_dt = new Date(month_diff);   
+      
+        
+                var year = age_dt.getUTCFullYear();  
+      
+     
+                var age = Math.abs(year - 1970);  
+      
+      
+                return document.getElementById("result").innerHTML =    
+                "Age is: " + age + " years. ";  
+        }    
+        if(age>18 && age<44){
+            URL="https://selfregistration.cowin.gov.in";
+            window.open(URL);
+        }         
+        }
+    </script>
+</head>
+<body>
+    <center>  
+        <h2 style="color: 32A80F" align="center"> Calculate Age from Date of Birth <br> <br> </h2>   
+          
+      
+        <b> Enter Date of Birth: <input type=date id = DOB> </b>  
+        <span id = "message" style="color:red"> </span> <br><br>    
+          
+       
+        <button type="submit" onclick = "ageCalculator()"> Calculate age </button> <br><br>  
+        <h3 style="color:32A80F" id="result" align="center"></h3>   
+        </center>  
+</body>
+</html>

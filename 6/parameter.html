@@ -1,0 +1,29 @@
+<!-- Write a JavaScript program to pass a 'JavaScript function' as
+parameter -->
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        
+    </head> 
+      
+    <body style = "text-align:center;"> 
+          
+        <p> 
+            Passing function as arguments. 
+        </p> 
+          
+        
+        <button onclick = "is_outer(is_inner)"> 
+            Click Here 
+        </button>     
+          
+        <script> 
+            function is_inner(value){
+                return 'hello User!';
+            }
+            function is_outer(func){
+                alert(func());
+            }
+        </script> 
+    </body> 
+</html>              
